@@ -1,0 +1,468 @@
+/*  ################################################################
+
+  File Name: style.css
+  Template Name: Photography
+  Author: ThemeWagon.com
+  
+################################################################# */ 
+
+/* ----------------------------------------------------
+  General
+------------------------------------------------------- */
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+.bar {
+  background-color: black;
+  height: 200%;
+  width: 30px;
+  position: fixed;
+}
+
+.canvas.canvas-slid {
+  left: 245px;
+}
+.social {
+  /* margin: -25px 55px 21px; */
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: 6px 10px;
+  margin: -23px auto 23px;
+  text-align: center;
+}
+.canvas{
+   background: rgb(15, 14, 14);
+   color: rgb(136, 136, 136);
+}
+
+a.navmenu-brand {
+  margin: 51px 0 80px;
+}
+.canvas {
+  position: relative;
+  left: 30px;
+
+}
+.navmenu.navmenu-default.navmenu-fixed-left {
+  margin-left: 30px;
+  padding-top: 35px;
+  position: absolute;
+  /* z-index: 99; */
+}
+.navbar.navbar-default button {
+  position: absolute !important;
+  top: 50%;
+}
+
+
+
+html{
+  overflow-x: hidden;
+}
+.social i.fa {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.social i.fa:hover {
+  color: white;
+  transition:.3s;
+}
+
+/* ----------------------------------------------------
+  Main Page Content
+------------------------------------------------------- */
+
+.home-page-header {
+  position: fixed;
+  /* top: 75%; */
+  left: 76px;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.home-page-header1 {
+  position: absolute;
+   top: 75%; 
+  left: 16px;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+h1.title-home {
+  color: red;
+  font-size: 20px;
+}
+h2.sub-title-home {
+  color: red;
+  margin-bottom: -15px;
+  font-size: 15px;
+}
+
+
+.copyright-text {
+  text-align: center;
+  color: rgba(255, 228, 196, 0.21);
+}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+=======
+>>>>>>> master
+li.category-item a {
+    color: #888888;
+}
+li.category-item a:hover {
+   color: #337ab7;
+}
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+>>>>>>> master
+/* ----------------------------------------------------
+  Gallery
+------------------------------------------------------- */
+
+/* ---- grid ---- */
+
+.grid {
+  /* background: #DDD; */
+  max-width: 1200px;
+}
+/* clear fix */
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #0D8;
+  border: 2px solid white;
+  border-color: white;
+}
+
+.grid-item--width2 {
+  width: 200px;
+}
+
+.grid-item--height2 {
+  height: 200px;
+}
+
+/* ----------------------------------------------------
+  Blog
+------------------------------------------------------- */
+.blog-post {
+  width: 330px;
+  padding: 27px 0px 0 24px;
+  float: left;
+}
+p.blog-text {
+  padding: 0px 0px;
+}
+.canvas.col-md-3.container.page-container.sidebar {
+  position: fixed;
+}
+
+p.blog-post-sub-title.text-center {
+  margin-top: 20px;
+  color: burlywood;
+  font-weight: bold;
+}
+.title-divider {
+  border-top: 2px solid;
+  display: block;
+  max-width: 60px;
+  margin: 0 auto 15px;
+  color: rgba(184, 177, 168, 1);
+}
+h3.blog-post-title {
+  margin-top: 0px;
+}
+
+
+/* ----------------------------------------------------
+  Sidebar
+------------------------------------------------------- */
+
+.post-category {
+  text-align: left;
+  padding: 13px 13px 0 21px;
+  text-transform: uppercase;
+}
+li.category-item {
+  list-style: none;
+  margin-left: -30px;
+}
+.category-item i.fa.fa-angle-right {
+  margin-right: 20px;
+}
+h4.sidebar-title {
+  margin-bottom: 10px;
+}
+h4.sidebar-title {
+  text-transform: uppercase;
+  text-align: left;
+}
+p.blog-text {
+  text-align: left;
+}
+h4.left-side.sidebar-title {
+  margin-top: -8px;
+}
+.blog-post-single {
+  margin-top: 23px;
+}
+
+
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+/* ----------------------------------------------------
+  Contact
+------------------------------------------------------- */
+
+
+.contact-bg.col-md-8.col-sm-12 {
+  position: relative;
+  left: -15px;
+}
+
+.col-md-4.col-sm-12.contact-bar img {
+  position: relative;
+  left: -15px;
+  /* width: 450px; */
+}
+.col-md-4.col-sm-12.contact-bar {
+   /* margin-left: -29px; */ 
+  background-color: white;
+  
+   height: 713px;
+}
+input#name, input#email {
+  margin-bottom: 10px;
+  border-radius: 0px;
+}
+form {
+  margin-top: 20px;
+}
+button#contact-submit {
+  margin-top: 10px;
+  width: 100%;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #000000;
+  border-color: #204d74;
+  transition: .5s;
+}
+.col-md-6.add-text {
+  margin: 14px 0 20px;
+}
+
+
+
+body.contact-page {
+    background-color: white;
+}
+textarea#message {
+    width: 100%;
+}
+.canvas.contact-page {
+    background-color: white;
+}
+
+.carousel-indicators li {
+  border-radius: 0px;
+  width: 20px;
+  height: 5px;
+}
+
+.carousel-indicators .active {
+  width: 20px;
+  height: 5px;
+  margin: 1px;
+}
+
+.carousel-inner>.item>img {
+  min-width: 100%;
+  max-height: 100vh;
+}
+
+.carousel-caption  {
+  padding-bottom: 60px;
+  text-align: right;
+}
+
+/* ----------------------------------------------------
+  Responsive
+------------------------------------------------------- */
+
+@media (min-width: 1100px){
+  p.blog-text-single {
+    width: 95%;
+    text-align: justify;
+  
+    margin-top: 20px;
+    padding: 0 60px;
+    font-size: 17px;
+    line-height: 27px;
+    letter-spacing: 1px;
+}
+}
+@media (min-width: 1200px){
+.canvas.gallery {
+  margin-top: -20px;
+  padding: 10px;
+  /* margin-bottom: 28px; */
+}
+}
+@media (max-width: 1090){
+  div.canvas {
+    margin-top: -50px !important;
+    height: 110% !important;
+  }
+  .carousel, .item, .active {
+  height: 110% !important;
+  margin-top: -50px !important;
+}
+}
+
+@media (min-width: 100px){
+  button.navbar-toggle {
+    width: 40px;
+    background:url(../img/navicon.jpg);
+    z-index: 9;
+    color: black;
+    position: fixed;
+    top: 50%;
+    left: -15px;
+    background-repeat: no-repeat;
+  }
+  }
+@media (max-width: 1100px){
+  .navbar.navbar-default.navbar-fixed-top {
+      margin-top: -50px;
+    }
+}
+
+@media (max-width: 400px){
+    .blog-post {
+      width: 100%;
+      padding: 0;
+      float: left;
+  }
+}
+@media (max-width: 668px){
+    #gallery-content {
+      float: left;
+      width: 100%;
+      margin-top: 69px;
+  }
+  #gallery-header-center-right {
+    float: left !important;
+    width: 100% !important;
+    padding: 0;
+  }
+  .gallery-header-center-right-links-current {
+    color: #FFFFFF;
+     background-color: transparent !important; 
+}
+.gallery-header-center-right-links:hover {
+    background-color: transparent !important;
+}
+
+}
+@media (max-width:400px){
+    .gallery-header-center-right-links {
+      padding-right: 1px !important;
+      padding-left: 1px !important;
+  }
+  #gallery-content-center img {
+    width: 100% !important;
+    margin-bottom: 10px;
+    margin-left: -14px !important;
+}
+h3.blog-post-title {
+    margin-top: 0px;
+    text-align: center;
+}
+.photostack figure {
+    width: 100%;
+     height: auto; 
+    position: relative;
+    display: inline-block;
+    background: none !important; 
+    padding: 26px !important;
+    text-align: center;
+    margin: 5px;
+}
+
+}
+
+
+
+@media (min-width:991px){
+.col-md-4.col-sm-12.contact-bar {
+    margin-left: -30px;
+    background-color: white;
+}
+.col-md-4.col-sm-12.contact-bar img {
+    position: relative;
+    left: 0 !important;
+    margin-top: 20px;
+}
+}
+@media (max-width:991px){
+  body.contact-page div.canvas {
+      margin-top: -50px !important;
+      height: 110% !important;
+  }
+}
+
+@media (min-width: 1100px){
+  span.prev-buttton {
+      background-color: black;
+      padding: 5px;
+      float: left;
+      cursor: pointer;
+      margin:10px 0 20px;
+  }
+  span.next-buttton {
+      background-color: black;
+      padding: 5px;
+      float: right;
+      cursor: pointer;
+      margin:10px 0 20px;
+  }
+}
+@media (max-width: 1099px){
+  span.prev-buttton {
+      background-color: black;
+      padding: 5px;
+      cursor: pointer;
+      float: left;
+      margin:10px 20px 20px 10px;
+  }
+  span.next-buttton {
+      background-color: black;
+      padding: 5px;
+      cursor: pointer;
+      float: right;
+      margin:10px 40px 20px;
+  }
+}
