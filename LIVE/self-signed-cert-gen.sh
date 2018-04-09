@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Specify where we will install
-# the xip.io certificate
+# the certificate
 SSL_DIR="/etc/ssl/publiccloud.co"
 
 # Set the wildcarded domain
