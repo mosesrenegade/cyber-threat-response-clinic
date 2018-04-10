@@ -1,3 +1,4 @@
+Step 0 - 
 Step 1 - Add new DNS Pointer to 'safe' biomedical DNS which points to 'Load Balancer' simulating Domain Fronting
 
 Step 2 - Add new Front Page for the SPA for biomed domain called www.happybio.com
@@ -12,3 +13,4 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 Install Electron
 sudo npm install -g electron-packager
+
