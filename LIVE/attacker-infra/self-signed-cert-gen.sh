@@ -28,7 +28,7 @@ sudo mkdir -p "$SSL_DIR"
 
 # Generate our CA first
 sudo openssl genrsa -out "$SSL_DIR/rootCA.key" 2048
-openssl req -x509 -new -subj "$(echo -n "$SUBJ" | tr "\n" "/")" -nodes -key "$SSL_DIR/rootCA.key" -sha256 -days 10240 -out "$SSL_DIR/rootCA.pem"
+sudo openssl req -x509 -new -subj "$(echo -n "$SUBJ" | tr "\n" "/")" -nodes -key "$SSL_DIR/rootCA.key" -sha256 -days 10240 -out "$SSL_DIR/rootCA.pem"
 # Generate our Private Key, CSR and Certificate
 sudo openssl genrsa -out "$SSL_DIR/publiccloud.co.key" 2048
 sudo openssl req -new -subj "$(echo -n "$SUBJ" | tr "\n" "/")" -key "$SSL_DIR/publiccloud.co.key" -out "$SSL_DIR/publiccloud.co.csr" -passin pass:$PASSPHRASE
