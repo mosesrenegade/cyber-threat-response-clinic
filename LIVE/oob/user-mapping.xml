@@ -1,5 +1,5 @@
 <user-mapping>
-  <authorize username="dcloud" password="77519">
+  <authorize username="dcloud" password="507836">
     <connection name="Jumphost">
       <protocol>rdp</protocol>
       <param name="hostname">198.18.133.50</param>
@@ -7,7 +7,7 @@
       <param name="username">HACKMDS\administrator</param>
       <param name="password">C1sco12345</param>
     </connection>
-    <connection name="Jumphost2"
+    <connection name="Jumphost2">
       <protocol>rdp</protocol>
       <param name="hostname">198.18.133.50</param>
       <param name="port">3389</param>
