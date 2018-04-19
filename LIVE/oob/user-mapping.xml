@@ -1,0 +1,52 @@
+<user-mapping>
+  <authorize username="dcloud" password="77519">
+    <connection name="Jumphost">
+      <protocol>rdp</protocol>
+      <param name="hostname">198.18.133.50</param>
+      <param name="port">3389</param>
+      <param name="username">HACKMDS\administrator</param>
+      <param name="password">C1sco12345</param>
+    </connection>
+    <connection name="Jumphost2"
+      <protocol>rdp</protocol>
+      <param name="hostname">198.18.133.50</param>
+      <param name="port">3389</param>
+      <param name="username">HACKMDS\lpeterson</param>
+      <param name="password">!!coco92!!</param>
+    </connection>
+    <connection name="Contractor">
+      <protocol>rdp</protocol>
+      <param name="hostname">198.18.133.10</param>
+      <param name="port">3389</param>
+      <param name="username">dhowser</param>
+      <param name="password">C1sco12345</param>
+    </connection>
+    <connection name="Workstation on Wheels">
+      <protocol>rdp</protocol>
+      <param name="hostname">198.19.30.100</param>
+      <param name="port">3389</param>
+      <param name="username">hackmds\nurse</param>
+      <param name="password">C1sco12345</param>
+    </connection>
+    <connection name="Kali Linux">
+      <protocol>vnc</protocol>
+      <param name="hostname">198.18.133.6</param>
+      <param name="password">C1sco12345</param>
+      <param name="port">5901</param>
+    </connection>
+    <connection name="IT">
+            <protocol>rdp</protocol>
+            <param name="hostname">198.19.30.102</param>
+            <param name="port">3389</param>
+            <param name="username">Administrator</param>
+            <param name="password">C1sco12345</param>
+    </connection>
+    <connection name="DR">
+        <protocol>rdp</protocol>
+        <param name="hostname">198.19.10.101</param>
+        <param name="port">3389</param>
+        <param name="username">hackmds\dhowser</param>
+        <param name="password">C1sco12345</param>
+     </connection>
+  </authorize>
+</user-mapping>

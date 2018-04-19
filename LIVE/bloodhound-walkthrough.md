@@ -1,4 +1,5 @@
 
+
 Step 1 - Get on Jumphost
 Step 2 - Open Putty - Kali
 Step 3 - Kali run this command:
@@ -21,7 +22,7 @@ Step 5 - Save the following session:
      Name: Infra.attack.com
 Step 6 - log into infra.attack.com
        - run the following items: sudo apt update -y && sudo apt autoremove -y && sudo reboot 
-       - login again
+       - login again	   
        - sudo apt install apache2 nginx libapache2-mod-php7.0 -y
        - 
      - The following files in the https://www.github.com/mosesrenegade/cyber-threat-response-clinic area is needed:
@@ -51,3 +52,4 @@ sudo apt-get install -y build-essential
 Install Electron
 sudo npm install -g electron-packager
 
+make lpeterson password: !!coco92!!

@@ -6,21 +6,27 @@ dpkg -i kali-archive-keyring_2018.1_all.deb
      
 sudo apt update -y && sudo apt dist-upgrade -y && sudo apt install bloodhound -y && sudo apt autoremove -y
 
+#Shut Down nginx
+sudo systemctl disable nginx
+sudo service nginx stop
+
+#Empire
 cd /opt/empire
 git pull
 cd /opt/empire/setup/
 ./install.sh
 ./reset.sh
 
-#Now for the manual crap!
-
+#Make me a stager
 cd /opt/empire
 wget https://github.com/mosesrenegade/cyber-threat-response-clinic/tree/master/LIVE/attacker-desktop/empire.rc
-./empire -r empire.rc
+mv empire.rc /tmp
+./empire -r /tmp/empire.rc
 
-
+#Finish up
 echo "CTR-3.1" > /etc/ctr-version
 
+#Addtl notes
 echo "Perform the following steps"
 echo "cd /opt/empire"
 echo "./empire"
