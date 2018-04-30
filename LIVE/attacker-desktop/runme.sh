@@ -34,3 +34,6 @@ echo "Once empire loads you need to create a http listener and a stager that is 
 echo "move this over to http://198.18.133.5/files/launcher.bat"
 echo "Sorry I can't automate this"
 echo "exeucte the following" 
+
+echo "root   soft    nofile  40000" >> /etc/security/limits.conf
+echo "root   hard    nofile  40000" >> /etc/security/limits.conf

@@ -17,10 +17,11 @@
 
   if ($username === 'lpeterson')
   {
-    if ($password === 'test')
+    if ($password === '!!coco92!!')
     {
       sleep(1);
-      echo "You win!"; 
+      //echo "You win!";
+      echo "<img src='healthcare.jpg'>";
     }
   }
 
@@ -28,6 +29,7 @@
   {
     sleep(1);
     echo "You lose!";
+    die();
   }
   
 ?>
