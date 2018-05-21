@@ -4,5 +4,6 @@ wget https://raw.githubusercontent.com/mosesrenegade/cyber-threat-response-clini
 
 wget https://raw.githubusercontent.com/mosesrenegade/cyber-threat-response-clinic/master/LIVE/attacker-desktop/safe.bat -o /tmp/safe.bat
 
+cd /tmp
 python -m 'SimpleHTTPServer' 9001
 
