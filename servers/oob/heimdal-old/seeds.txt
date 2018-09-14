@@ -1,0 +1,7 @@
+The following is for DEV for Postgresql
+\connect heimdal
+INSERT into servers (name, address, host_status) VALUES ('localhost', '127.0.0.1', 'unknown');
+INSERT into servers (name, address, host_status) VALUES ('127.0.0.1', '127.0.0.1', 'unknown');
+
+The following is for Production for Postgresql
+\connect heimdal

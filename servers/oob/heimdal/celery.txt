@@ -1,0 +1,3 @@
+How to start Celery:
+celery -A app.celery worker --loglevel=DEBUG
+

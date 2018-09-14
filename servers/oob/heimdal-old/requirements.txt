@@ -1,0 +1,11 @@
+flask
+celery
+flask-sqlalchemy
+psycopg2
+autoenv
+python-dotenv
+python-dotenv
+Flask_Migrate
+flask_script
+redis
+IPython

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+
+This Session ID is: {{ sess }}
+
+<div>
+  The following hosts are being tracked:
+  <table>
+    <TR>
+      <TD> Host    </TD>
+      <TD> Address </TD>
+      <TD> Is_Up?  </TD>
+    </TR>
+    {% for item in hosts %}
+    <TR>
+      <TD>{{ item['name'] }}</TD>
+      <TD>{{ item['address'] }}</TD>
+      <TD>{{ item['host_status'] }}</TD>
+    </TR>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
