@@ -7,7 +7,9 @@ from celery.utils.log import get_task_logger
 import celeryconfig
 from config import config
 import xml.etree.ElementTree as ET
+import tasks
 
+session_id=''
 
 def get_systems(systems):
     name = []
@@ -58,7 +60,6 @@ def make_celery(app):
 
 def create_app(config=None):
     hosts = []
-    session_id = []
     systems = []
     app = Flask(__name__, instance_relative_config=True)
     app.debug = False
@@ -82,9 +83,11 @@ app = create_app()
 
 celery = make_celery(app)
 
-@celery.task
-def log(message):
-    logger.debug(message)
+tasks.post_to_api(get_sessionid(session_id))
+
+#@celery.task
+#def log(message):
+#    logger.debug(message)
 
 if __name__ == 'main':
     app.run()

@@ -9,3 +9,4 @@ Flask_Migrate
 flask_script
 redis
 IPython
+requests
