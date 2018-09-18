@@ -1,0 +1,216 @@
+swagger: '2.0'
+info:
+  title: CTRC Stormbreaker API
+  description: Cyber Threat Response Clinic - Cloud Resource Management APIs
+  version: 0.1.0
+
+
+host: fixme.cisco.com
+basePath: /api/v0
+schemes:
+  - http
+
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+tags:
+  - name: Cloud Accounts
+  - name: dCloud
+  - name: Admin
+
+
+paths:
+
+  /cloudAccounts:
+    post:
+      summary: load or replace the Cloud Account list
+      operationId: list_cloud_accounts
+      description: List all provisioned Cloud Accounts.
+      tags:
+        - Cloud Accounts
+        - Admin
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  $ref: "#/definitions/CloudAccount"
+
+    get:
+      summary: list Cloud Accounts
+      operationId: list_cloud_accounts
+      description: List all provisioned Cloud Accounts.
+      tags:
+        - Cloud Accounts
+        - Admin
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  $ref: "#/definitions/CloudAccount"
+
+
+  /cloudAccounts/{login}:
+    parameters:
+    - name: login
+      description: Cloud Account login user ID.
+      in: path
+      required: true
+      type: string
+
+    get:
+      summary: get Cloud Account details
+      operationId: get_cloud_account
+      description: Get the details for a Cloud Account.
+      tags:
+        - Cloud Accounts
+        - Admin
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/CloudAccount"
+
+  /cloudAccounts/assign:
+    post:
+      summary: assign a Cloud Account
+      operationId: assign_cloud_account
+      description: Assign a Cloud Account login to a new dCloud sessions.
+      tags:
+        - Cloud Accounts
+      parameters:
+        - name: sessionId
+          description: dCloud Session ID
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+
+
+  /dcloud/sessions:
+    get:
+      summary: list active dCloud sessions
+      operationId: list_dcloud_sessions
+      description: >
+        List all active dCloud sessions.
+      tags:
+        - dCloud
+        - Admin
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              items:
+                type: array
+                items:
+                  $ref: "#/definitions/dCloudSession"
+
+
+  /dcloud/sessions/{sessionId}:
+    parameters:
+      - name: sessionId
+        description: dCloud Session ID
+        in: path
+        required: true
+        type: string
+
+    get:
+      summary: get dCloud session details
+      operationId: get_dcloud_session_details
+      description: Get active dCloud session details, by ID.
+      tags:
+        - dCloud
+      parameters:
+        - name: sessionId
+          description: dCloud Session ID
+          in: path
+          required: true
+          type: string
+        - in: body
+          description: Data to be written to the schema-less MondoDB datastore
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/dCloudSession'
+      responses:
+        200:
+          description: OK
+
+    put:
+      summary: heartbeat events from active dCloud sessions
+      operationId: dcloud_heartbeat
+      description: >
+        Active dCloud sessions should periodically send heartbeat posts to this 
+        API endpoint to indicate that they are still active.
+      tags:
+        - dCloud
+      parameters:
+        - in: body
+          description: Data to be written to the schema-less MondoDB datastore
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/dCloudSession'
+    responses:
+        200:
+          description: OK
+
+
+definitions:
+
+  dCloudSession:
+    type: object
+    required:
+      - sessionId
+    properties:
+      sessionId:
+        type: string
+        example: UUID
+      serverStatus:
+        type: list
+        example: [{...}, {...}]
+      assignedCloudAccount:
+        $ref: '#/definitions/CloudAccount'
+
+  CloudAccount:
+    type: object
+    required:
+      - login
+    properties:
+      login:
+        type: string
+        example: ctrlab+1@cisco.com
+      services:
+        type: array
+        items:
+          type: object
+          required:
+            - serviceName
+            - orgId
+          properties:
+            serviceName:
+              type: string
+              example: AMP
+            orgId:
+              type: string
+              example: UUID
