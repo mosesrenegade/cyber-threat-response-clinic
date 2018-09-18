@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTANER Your Name "moses@cisco.com"
+MAINTAINER Moses Frost "moses@cisco.com"
 
 RUN apt-get update -y && \
     apt-get install -y python3-pip python3-dev
