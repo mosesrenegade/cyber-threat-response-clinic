@@ -1,3 +1,4 @@
 flask
 celery
 redis
+selenium
