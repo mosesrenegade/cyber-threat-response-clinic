@@ -1,6 +1,8 @@
 flask
 celery
 flask-sqlalchemy
+Flask-PyMongo
+pymongo
 psycopg2-binary
 autoenv
 python-dotenv

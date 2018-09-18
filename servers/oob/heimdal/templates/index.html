@@ -14,8 +14,8 @@ This Session ID is: {{ sess }}
     {% for item in hosts %}
     <TR>
       <TD>{{ item['name'] }}</TD>
-      <TD>{{ item['address'] }}</TD>
-      <TD>{{ item['host_status'] }}</TD>
+      <TD>{{ item['ip_address'] }}</TD>
+      <TD>{{ item['status'] }}</TD>
     </TR>
     {% endfor %}
   </table>
