@@ -41,9 +41,9 @@ class AppDynamicsJob(unittest.TestCase):
         driver.find_element_by_id("name_last").send_keys("lastname")
         driver.find_element_by_id("email").click()
         driver.find_element_by_id("email").clear()
-        driver.find_element_by_id("email").send_keys("scoultr@cisco.com")
+        driver.find_element_by_id("email").send_keys("CTR_pod_no@dcloud.com")
         driver.find_element_by_id("notification_email").clear()
-        driver.find_element_by_id("notification_email").send_keys("scoultr@cisco.com") # appropriate email here
+        driver.find_element_by_id("notification_email").send_keys("CTR_pod_no@dcloud.com") # appropriate email here
         driver.find_element_by_id("payment_state").click()
         Select(driver.find_element_by_id("payment_state")).select_by_visible_text("Evaluation")
         driver.find_element_by_name("commit").click()
@@ -51,7 +51,7 @@ class AppDynamicsJob(unittest.TestCase):
         driver.find_element_by_id("email").click()
         driver.find_element_by_id("email").click()
         driver.find_element_by_id("email").clear()
-        driver.find_element_by_id("email").send_keys("CTR3@dcloud.com") #index with POD number
+        driver.find_element_by_id("email").send_keys("CTR_pod_no@dcloud.com") #index with POD number
         driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Mojave Announcement'])[1]/following::main[1]").click()
         driver.find_element_by_name("commit").click()
     
