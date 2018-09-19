@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 from flask_pymongo import PyMongo
 from celery import Celery
 from celery.signals import task_postrun
@@ -30,7 +30,12 @@ def get_sessionid(session_id):
     if os.environ['FLASK_ENV'] == 'development':
         guacfile = 'user-mapping.xml'
     else:
-        guacfile = '/etc/guacamole/user-mapping.xml'
+        try:
+            guacfile = '/etc/guacamole/user-mapping.xml'
+        finally:
+            guacfile = 'user-mapping.xml'
+            pass
+    
     tree = ET.parse(guacfile)
     root = tree.getroot()
     for child in root:
@@ -69,11 +74,11 @@ def create_app(config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.debug = False
     app.config.from_object(os.environ['APP_SETTINGS'])
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+    #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+    #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     app.config['MONGO_URI'] = 'mongodb://localhost:27017/heimdal'
 
-    db.init_app(app)
+    #db.init_app(app)
     
     @app.route('/')
     def index():
@@ -82,8 +87,8 @@ def create_app(config=None):
     return app
 
 
-db = SQLAlchemy()
-import models
+#db = SQLAlchemy()
+#import models
 
 app = create_app()
 
@@ -92,7 +97,10 @@ mongo = PyMongo(app)
 
 
 # Lets make some celery tasks on boot
-tasks.put_to_api(get_sessionid(session_id))
-
+try:
+    tasks.put_to_api(get_sessionid(session_id))
+except:
+    pass
+    
 if __name__ == 'main':
     app.run()
