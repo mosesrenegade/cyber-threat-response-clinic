@@ -1,14 +1,18 @@
 from celery.schedules import crontab
 import os
+import redis
 
 session_id =''
 
 try:
-    if os.environ.get['FLASK_ENV']=='development':
-        f=open("/heimdal/sess_id.txt","r")
-    else:
-        f=open("/heimdal/data/sess_id.txt","r")
-    session_id=f.readlines()
+    #if os.environ.get['FLASK_ENV']=='development':
+    #    REDIS_HOST='localhost'
+
+    #else:
+        
+    r = redis.StrictRedis(host='REDIS_HOST', port=6379, db=0)
+    session_id=r.get('session_id')
+
 except:
     pass
 

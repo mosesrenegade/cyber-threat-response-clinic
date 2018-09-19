@@ -9,6 +9,7 @@ import celeryconfig
 from config import config
 import xml.etree.ElementTree as ET
 import tasks
+import redis
 
 session_id=''
 
@@ -16,14 +17,9 @@ def get_systems(systems):
     name = ''
     ip_address = ''
     status = ''
-    #try:
 
     hosts_new = list(mongo.db.servers.find())
         
-    #except (SQLAlchemy.exc.SQLAlchemyError, SQLAlchemy.exc.DBAPIError) as e:
-    #    e.append('unable to query the database')
-    #    return { 'error': e }
-
     return hosts_new
 
 def get_sessionid(session_id):
@@ -45,8 +41,10 @@ def get_sessionid(session_id):
             f=open('data/sess_id.txt', 'w')
         else:
             f=open('/heimdal/data/sess_id.txt','w')
-    f.write(session_id)
-    f.close
+
+    r = redis.StrictRedis(host='REDIS_HOST', port=6379, db=0)
+    r.set('session_id', session_id)
+    print(r.get)
     return session_id
 
 def make_celery(app):
@@ -76,12 +74,10 @@ def create_app(config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.debug = False
     app.config.from_object(os.environ.get('APP_SETTINGS'))
-    #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-    #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
     app.config['SB_HB_URL'] = os.environ.get('SB_HB_URL')
     app.config['SB_URL'] = os.environ.get('SB_URL')
-    #db.init_app(app)
+    app.config['REDIS_URL'] = os.environ.get('REDIS_URL')
     
     @app.route('/')
     def index():
@@ -89,17 +85,11 @@ def create_app(config=None):
     
     return app
 
-
-#db = SQLAlchemy()
-#import models
-
 app = create_app()
 
 celery = make_celery(app)
 mongo = PyMongo(app)
 
-
-# Lets make some celery tasks on boot
 try:
     tasks.put_to_api(get_sessionid(session_id))
 except:

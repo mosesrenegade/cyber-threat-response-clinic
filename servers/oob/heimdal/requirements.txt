@@ -5,7 +5,6 @@ pymongo
 autoenv
 python-dotenv
 python-dotenv
-Flask_Migrate
 flask_script
 redis
 IPython
