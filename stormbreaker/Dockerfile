@@ -6,6 +6,6 @@ COPY requirements.txt flask_app.py ./
 
 RUN pip install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 5000
 
 CMD ["flask_ap.py"]

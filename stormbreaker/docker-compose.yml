@@ -2,15 +2,17 @@ version: '2'
 
 services:
 
-#  flask:
-#    build:
-#      context: .
-#    restart: always
-#    depends_on:
-#      - mongo
-#    ports:
-#      - "5000:80"
-#
+  flask:
+    build:
+      context: .
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - "80:5000"
+    environment:
+      MONGO_URL: "mongodb://mongo:27017"
+
 #  celery:
 #    build:
 #      context: .
