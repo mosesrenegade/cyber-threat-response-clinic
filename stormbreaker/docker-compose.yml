@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+
+#  flask:
+#    build:
+#      context: .
+#    restart: always
+#    depends_on:
+#      - mongo
+#    ports:
+#      - "5000:80"
+#
+#  celery:
+#    build:
+#      context: .
+#    restart: always
+#    depends_on:
+#      - mongo
+#      - redis
+#    command: [ "celery_app.py" ]
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+
+  mongo-express:
+    image: mongo-express:latest
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - "8081:8081"
