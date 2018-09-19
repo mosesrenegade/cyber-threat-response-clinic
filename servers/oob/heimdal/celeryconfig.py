@@ -10,7 +10,7 @@ try:
 
     #else:
         
-    r = redis.StrictRedis(host='REDIS_HOST', port=6379, db=0)
+    r = redis.StrictRedis(host=os.envion.get('REDIS_HOST'), port=6379, db=0)
     session_id=r.get('session_id')
 
 except:

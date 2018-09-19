@@ -42,7 +42,7 @@ def get_sessionid(session_id):
         else:
             f=open('/heimdal/data/sess_id.txt','w')
 
-    r = redis.StrictRedis(host='REDIS_HOST', port=6379, db=0)
+    r = redis.StrictRedis(host=os.environ.get('REDIS_HOST'), port=6379, db=0)
     r.set('session_id', session_id)
     print(r.get)
     return session_id
@@ -78,6 +78,7 @@ def create_app(config=None):
     app.config['SB_HB_URL'] = os.environ.get('SB_HB_URL')
     app.config['SB_URL'] = os.environ.get('SB_URL')
     app.config['REDIS_URL'] = os.environ.get('REDIS_URL')
+    app.config['REDIS_URI'] = os.environ.get('REDIS_URI')
     
     @app.route('/')
     def index():
