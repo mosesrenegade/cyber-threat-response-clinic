@@ -28,7 +28,7 @@ class AppDynamicsJob(unittest.TestCase):
         driver.find_element_by_name("button").click()
 		# call C# 2FA here #
 		# use in C#
-		# 2fa secret=lp3n5x3lywb2aw72 #
+		# 2fa secret= #
 
         driver.find_element_by_link_text("New Customer").click()
         driver.find_element_by_id("business_name").click()
