@@ -21,10 +21,10 @@ class AppDynamicsJob(unittest.TestCase):
         driver = self.driver
         driver.get("https://console.amp.cisco.com")
         driver.find_element_by_id("user_email").clear()
-        driver.find_element_by_id("user_email").send_keys("shauncoulter+mssp8@cisco.com")
+        driver.find_element_by_id("user_email").send_keys("pword")
         driver.find_element_by_id("user_password").click()
         driver.find_element_by_id("user_password").clear()
-        driver.find_element_by_id("user_password").send_keys("Hackath0n+")
+        driver.find_element_by_id("user_password").send_keys(" pword")
         driver.find_element_by_name("button").click()
 		# call C# 2FA here #
 		# use in C#
