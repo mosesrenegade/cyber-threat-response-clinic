@@ -6,7 +6,7 @@ info:
 
 
 host: fixme.cisco.com
-basePath: /api/v0
+basePath: /api
 schemes:
   - http
 
@@ -28,22 +28,16 @@ paths:
   /cloudAccounts:
     post:
       summary: load or replace the Cloud Account list
-      operationId: list_cloud_accounts
+      operationId: post_cloud_accounts
       description: List all provisioned Cloud Accounts.
       tags:
         - Cloud Accounts
         - Admin
       responses:
-        200:
-          description: OK
-          schema:
-            type: object
-            properties:
-              items:
-                type: array
-                items:
-                  $ref: "#/definitions/CloudAccount"
-
+        201:
+          description: Created
+        400:
+          description: Bad Request
     get:
       summary: list Cloud Accounts
       operationId: list_cloud_accounts
