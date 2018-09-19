@@ -14,7 +14,7 @@ RUN pip3 install -r requirements.txt
 
 COPY . /heimdal
 
-expose 80 443
+expose 8888 5000
 #ENTRYPOINT [ "/bin/bash" ]
 ENV APP_SETTINGS config.ProductionConfig
 ENV FLASK_ENV production
