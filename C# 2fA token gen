@@ -1,0 +1,15 @@
+# could be this docker pull samplebyjsakamoto/otp2faauthwebappdemo
+
+or in C# as an object into python
+
+
+start
+
+using OtpNet;
+...
+
+var otpKeyStr = "herebedragons"; // <- this 2FA secret key.
+
+var otpKeyBytes = Base32Encoding.ToBytes(otpKeyStr);
+var totp = new Totp(otpKeyBytes);
+var twoFactorCode = totp.ComputeTotp(); // <- got 2FA coed at this time!
