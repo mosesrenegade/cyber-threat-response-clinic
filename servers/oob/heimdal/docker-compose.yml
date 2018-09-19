@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+
+  flask:
+    build:
+      context: .
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+    - "5000:5000"
+    environment:
+      MONGO_URL: "mongodb://mongo:27017"
+
+  celery:
+    build:
+      context: .
+    restart: always
+    depends_on:
+      - redis
+      - mongo
+    command: [ "celery_start.sh" ]
+    
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+    - "6379:6379"
+    

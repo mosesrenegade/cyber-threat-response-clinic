@@ -73,10 +73,10 @@ def create_app(config=None):
     systems = ''
     app = Flask(__name__, instance_relative_config=True)
     app.debug = False
-    app.config.from_object(os.environ['APP_SETTINGS'])
+    app.config.from_object(os.environ.get('APP_SETTINGS'))
     #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-    app.config['MONGO_URI'] = 'mongodb://localhost:27017/heimdal'
+    app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 
     #db.init_app(app)
     
