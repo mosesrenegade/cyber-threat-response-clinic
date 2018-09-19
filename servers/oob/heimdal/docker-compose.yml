@@ -19,6 +19,9 @@ services:
         source: /etc/guacamole
         target: /etc/gaucamole
         read_only: true
+      - type: volume
+        source: /tmp/data
+	target: /heimdal/data
 
   celery:
     build:
@@ -33,7 +36,11 @@ services:
       REDIS_URL: "redis://redis:6379"
       SB_URL: "http://ctr.moses.io/api"
       SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
-
+    volumes:
+      - type: volume
+        source: /tmp/data
+	target: /heimdal/data
+	
   mongo:
     image: mongo:latest
     restart: always

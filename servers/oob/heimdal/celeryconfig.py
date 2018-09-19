@@ -1,7 +1,11 @@
 from celery.schedules import crontab
+import os
 
 try:
-    f=open('sess_id.txt','r')
+    if os.environ.get['FLASK_ENV']=='development':
+        f=open("/heimdal/sess_id.txt","r")
+    else:
+        f=open("/heimdal/data/sess_id.txt","r")
     session_id=f.readlines()
 except:
     pass

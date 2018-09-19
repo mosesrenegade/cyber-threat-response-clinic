@@ -42,7 +42,9 @@ def get_sessionid(session_id):
         session_id = child.attrib['password']
         if os.environ['FLASK_ENV'] == 'development':
             print("session_id for this session is: " + session_id)
-    f=open('sess_id.txt','w')
+            f=open('data/sess_id.txt', 'w')
+        else:
+            f=open('/heimdal/data/sess_id.txt','w')
     f.write(session_id)
     f.close
     return session_id
