@@ -16,6 +16,7 @@ services:
       SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
       REDIS_URI: "redis://redis:6379"
       REDIS_HOST: "redis"
+      MONGO_HOST: "mongo"
     volumes:
       - type: bind
         source: /etc/guacamole
@@ -35,6 +36,7 @@ services:
     command: [ "/heimdal/celery_start.sh" ]
     environment:
       MONGO_URI: "mongodb://mongo:27017/heimdal"
+      MONGO_HOST: "mongo"
       REDIS_URL: "redis://redis:6379"
       SB_URL: "http://ctr.moses.io/api"
       SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
