@@ -77,7 +77,8 @@ def create_app(config=None):
     #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
-
+    app.config['SB_HB_URL'] = os.environ.get('SB_HB_URL')
+    app.config['SB_URL'] = os.environ.get('SB_URL')
     #db.init_app(app)
     
     @app.route('/')
