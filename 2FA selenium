@@ -9,8 +9,6 @@ import unittest, time, re
 
 class AppDynamicsJob(unittest.TestCase):
     def setUp(self):
-        # AppDynamics will automatically override this web driver
-        # as documented in https://docs.appdynamics.com/display/PRO44/Write+Your+First+Script
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
         self.base_url = "https://www.katalon.com/"
