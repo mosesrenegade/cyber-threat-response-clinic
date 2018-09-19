@@ -25,7 +25,7 @@ services:
     depends_on:
       - redis
       - mongo
-    command: [ "celery_start.sh" ]
+    command: [ "/heimdal/celery_start.sh" ]
     
   mongo:
     image: mongo:latest
