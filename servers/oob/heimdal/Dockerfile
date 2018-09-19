@@ -19,4 +19,4 @@ expose 80 443
 ENV APP_SETTINGS config.ProductionConfig
 ENV FLASK_ENV production
 
-CMD [ "startup.sh" ]
+CMD [ "/heimdal/startup.sh" ]
