@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.3'
 
 services:
 
@@ -17,11 +17,11 @@ services:
     volumes:
       - type: bind
         source: /etc/guacamole
-        target: /etc/gaucamole
+        target: /etc/guacamole
         read_only: true
       - type: volume
-        source: /tmp/data
-	target: /heimdal/data
+        source: app-data
+        target: /heimdal/data
 
   celery:
     build:
@@ -37,10 +37,10 @@ services:
       SB_URL: "http://ctr.moses.io/api"
       SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
     volumes:
-      - type: volume
-        source: /tmp/data
-	target: /heimdal/data
-	
+    - type: volume
+      source: app-data
+      target: /heimdal/data
+
   mongo:
     image: mongo:latest
     restart: always
@@ -53,3 +53,6 @@ services:
     ports:
     - "6379:6379"
 
+volumes:
+  app-data:
+  
