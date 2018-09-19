@@ -11,7 +11,7 @@ from app import create_app
 #migrate = Migrate(db)
 manager = Manager(create_app)
 
-manager.add_command("server", Server())
+manager.add_command("server", Server(host='0.0.0.0', port=5000))
 
 @manager.shell
 def make_shell_context():
