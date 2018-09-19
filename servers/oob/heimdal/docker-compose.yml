@@ -12,6 +12,11 @@ services:
     - "5000:5000"
     environment:
       MONGO_URL: "mongodb://mongo:27017"
+    volumes:
+      - type: bind
+        source: /etc/guacamole
+        target: /etc/gaucamole
+	read_only: true
 
   celery:
     build:
@@ -33,4 +38,4 @@ services:
     restart: always
     ports:
     - "6379:6379"
-    
+
