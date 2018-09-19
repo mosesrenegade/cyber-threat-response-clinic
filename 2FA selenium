@@ -24,9 +24,14 @@ class AppDynamicsJob(unittest.TestCase):
         driver.find_element_by_id("user_password").clear()
         driver.find_element_by_id("user_password").send_keys(" pword")
         driver.find_element_by_name("button").click()
-		# call C# 2FA here #
-		# use in C#
-		# 2fa secret= #
+		
+	# driver.find_element_by_id("whatthefisthis name").click()
+        # driver.find_element_by_id("whatthefisthis name").clear()
+		# call 2FA here #
+		totp = pyotp.TOTP(os.environ.get('TOTP2FA')) //2FA secret
+		totpnow = totp.now()
+		# print("Current OTP:", totp.now())
+        # driver.find_element_by_id("whatthefisthis name").send_keys(totpnow)
 
         driver.find_element_by_link_text("New Customer").click()
         driver.find_element_by_id("business_name").click()
