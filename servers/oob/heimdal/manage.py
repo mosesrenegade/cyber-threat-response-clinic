@@ -18,4 +18,4 @@ def make_shell_context():
     return dict(app=create_app)
 
 if __name__ == "__main__":
-    manager.run(host='0.0.0.0')
+    manager.run()
