@@ -4,7 +4,6 @@ Flask-PyMongo
 pymongo
 autoenv
 python-dotenv
-python-dotenv
 flask_script
 redis
 IPython

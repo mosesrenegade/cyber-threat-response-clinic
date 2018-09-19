@@ -2,7 +2,6 @@
 import os
 from flask import Flask, current_app
 from flask_script import Manager, Server
-from flask_migrate import Migrate
 import config
 from app import create_app
 

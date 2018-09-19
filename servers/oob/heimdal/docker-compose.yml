@@ -14,6 +14,8 @@ services:
       MONGO_URI: "mongodb://mongo:27017/heimdal"
       SB_URL: "http://ctr.moses.io/api"
       SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
+      REDIS_URI: "redis://redis:6379"
+      REDIS_HOST: "redis"
     volumes:
       - type: bind
         source: /etc/guacamole
@@ -36,6 +38,8 @@ services:
       REDIS_URL: "redis://redis:6379"
       SB_URL: "http://ctr.moses.io/api"
       SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
+      REDIS_URI: "redis://redis:6379"
+      REDIS_HOST: "redis"
     volumes:
     - type: volume
       source: app-data
