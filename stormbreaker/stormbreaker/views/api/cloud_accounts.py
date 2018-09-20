@@ -9,22 +9,27 @@ from stormbreaker import app
 from stormbreaker.mongo import db, init_cloud_accounts_collection
 
 
-@app.route('/api/cloudAccounts', methods=['POST'])
+@app.route('/api/cloud/accounts', methods=['POST'])
 def post_cloud_accounts():
     try:
         data = request.json
-        assert isinstance(data, list)
-        assert len(data) > 0
-        assert all([
+    except TypeError:
+        return Response(
+            "We encountered an error while parsing the JSON request body.",
+            status=400,
+        )
+
+    if not isinstance(data, list) or \
+        not len(data) > 0 or \
+        not all([
             isinstance(record, dict) and record.get("login")
             for record in data
-        ])
+        ]):
 
-    except TypeError as error:
-        return Response(str(error), status=400)
-
-    except AssertionError as error:
-        return Response(str(error), status=400)
+        return Response(
+            "The JSON data in the request body was not the expected format.",
+            status=400,
+        )
 
     if "cloud_accounts" in db.collection_names():
         db.cloud_accounts.drop()
@@ -35,13 +40,29 @@ def post_cloud_accounts():
     return Response(status=201)
 
 
-@app.route('/api/cloudAccounts', methods=['GET'])
+@app.route('/api/cloud/accounts', methods=['GET'])
 def list_cloud_accounts():
     data = list(db.cloud_accounts.find({}, {'_id': False}))
     return jsonify(data)
 
 
-@app.route('/api/cloudAccounts/assign', methods=['POST'])
+@app.route('/api/cloud/accounts/<login>', methods=['GET'])
+def get_cloud_account_details(login):
+    account_details = db.cloud_accounts.find_one(
+        {"login": login},
+        projection={'_id': False},
+    )
+
+    if not account_details:
+        return Response(
+            "We could not locate the cloud account for the login provided.",
+            status=404,
+        )
+
+    return jsonify(account_details)
+
+
+@app.route('/api/cloud/accounts/assign', methods=['POST'])
 def assign_cloud_account():
     session_id = request.args.get('sessionId')
     if not session_id:
