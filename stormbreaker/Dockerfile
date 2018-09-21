@@ -1,11 +1,11 @@
-FROM python:3.7
+FROM python:3.6
 
 WORKDIR /app
 
-COPY requirements.txt flask_app.py ./
+COPY ./ /app/
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+ENV FLASK_APP="stormbreaker"
 
-CMD ["flask_ap.py"]
+CMD ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]

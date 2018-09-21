@@ -1,0 +1,12 @@
+.venv/
+venv/
+
+*.pyc
+__pycache__/
+
+dist/
+build/
+*.egg-info/
+
+Dockerfile
+docker-compose.yml
