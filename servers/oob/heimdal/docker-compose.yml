@@ -1,0 +1,62 @@
+version: '3.3'
+
+services:
+
+  flask:
+    build:
+      context: .
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+    - "5000:5000"
+    environment:
+      MONGO_URI: "mongodb://mongo:27017/heimdal"
+      SB_URL: "http://ctr.moses.io/api"
+      SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
+      REDIS_URI: "redis://redis:6379"
+      REDIS_HOST: "redis"
+    volumes:
+      - type: bind
+        source: /etc/guacamole
+        target: /etc/guacamole
+        read_only: true
+      - type: volume
+        source: app-data
+        target: /heimdal/data
+
+  celery:
+    build:
+      context: .
+    restart: always
+    depends_on:
+      - redis
+      - mongo
+    command: [ "/heimdal/celery_start.sh" ]
+    environment:
+      MONGO_URI: "mongodb://mongo:27017/heimdal"
+      REDIS_URL: "redis://redis:6379"
+      SB_URL: "http://ctr.moses.io/api"
+      SB_HB_URL: "http://ctr.moses.io/api/dcloud/sessions"
+      REDIS_URI: "redis://redis:6379"
+      REDIS_HOST: "redis"
+    volumes:
+    - type: volume
+      source: app-data
+      target: /heimdal/data
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+    - "6379:6379"
+
+volumes:
+  app-data:
+  

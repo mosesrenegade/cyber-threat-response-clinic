@@ -1,11 +1,9 @@
 flask
 celery
-flask-sqlalchemy
-psycopg2-binary
+Flask-PyMongo
+pymongo
 autoenv
 python-dotenv
-python-dotenv
-Flask_Migrate
 flask_script
 redis
 IPython
