@@ -22,7 +22,10 @@ def post_cloud_accounts():
     if not isinstance(data, list) or \
         not len(data) > 0 or \
         not all([
-            isinstance(record, dict) and record.get("login")
+            isinstance(record, dict) and
+            record.get("login") and
+            record.get("password") and
+            record.get("status")
             for record in data
         ]):
 

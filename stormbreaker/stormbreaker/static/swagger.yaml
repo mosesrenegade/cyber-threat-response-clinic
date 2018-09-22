@@ -170,13 +170,18 @@ definitions:
     type: object
     required:
       - login
+      - password
+      - status
     properties:
       login:
         type: string
         example: ctrlab+1@cisco.com
+      password:
+        type: string
+        example: secret_password
       status:
         type: string
-        enum: [available, assigned, cleaning, error]
+        enum: [available, assigned, cleaning, cleanup-failed]
         example: assigned
 
   dCloudSession:
