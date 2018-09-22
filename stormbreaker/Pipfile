@@ -4,13 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-celery = "*"
+celery = {version = "*", extras = ["redis"]}
 redis = "*"
 pymongo = "*"
 selenium = "*"
 Flask = "*"
 
 [dev-packages]
+"flake8" = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.7"

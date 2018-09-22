@@ -1,11 +1,10 @@
 swagger: '2.0'
 info:
-  title: CTRC Stormbreaker API
+  title: CTRC Stormbreaker APIs
   description: Cyber Threat Response Clinic - Cloud Resource Management APIs
   version: 0.1.0
 
 
-host: fixme.cisco.com
 basePath: /api
 schemes:
   - http
@@ -25,7 +24,7 @@ tags:
 
 paths:
 
-  /cloudAccounts:
+  /cloud/accounts:
     post:
       summary: load or replace the Cloud Account list
       operationId: post_cloud_accounts
@@ -67,7 +66,7 @@ paths:
 
     get:
       summary: get Cloud Account details
-      operationId: get_cloud_account
+      operationId: get_cloud_account_details
       description: Get the details for a Cloud Account.
       tags:
         - Cloud Accounts
@@ -77,8 +76,10 @@ paths:
           description: OK
           schema:
             $ref: "#/definitions/CloudAccount"
+        404:
+          description: Not Found
 
-  /cloudAccounts/assign:
+  /cloud/accounts/assign:
     post:
       summary: assign a Cloud Account
       operationId: assign_cloud_account
@@ -95,6 +96,11 @@ paths:
         200:
           description: OK
           schema:
+            $ref: "#/definitions/CloudAccount"
+        400:
+          description: Bad Request
+        500:
+          description: No Accounts Available
 
 
   /dcloud/sessions:
@@ -110,12 +116,9 @@ paths:
         200:
           description: OK
           schema:
-            type: object
-            properties:
-              items:
-                type: array
-                items:
-                  $ref: "#/definitions/dCloudSession"
+            type: array
+            items:
+              $ref: "#/definitions/dCloudSession"
 
 
   /dcloud/sessions/{sessionId}:
@@ -132,79 +135,67 @@ paths:
       description: Get active dCloud session details, by ID.
       tags:
         - dCloud
-      parameters:
-        - name: sessionId
-          description: dCloud Session ID
-          in: path
-          required: true
-          type: string
-        - in: body
-          description: Data to be written to the schema-less MondoDB datastore
-          required: true
-          content:
-            application/json:
-              schema:
-                $ref: '#/definitions/dCloudSession'
       responses:
         200:
           description: OK
+          schema:
+            $ref: "#/definitions/dCloudSession"
 
     put:
       summary: heartbeat events from active dCloud sessions
-      operationId: dcloud_heartbeat
+      operationId: dcloud_session_update
       description: >
-        Active dCloud sessions should periodically send heartbeat posts to this 
+        Active dCloud sessions should periodically send heartbeat posts to this
         API endpoint to indicate that they are still active.
       tags:
         - dCloud
       parameters:
         - in: body
-          description: Data to be written to the schema-less MondoDB datastore
+          description: Data to be written to the schema-less MondoDB datastore.
           required: true
           content:
             application/json:
               schema:
-                $ref: '#/definitions/dCloudSession'
+                type: object
     responses:
         200:
           description: OK
+        400:
+          description: Bad Request
 
 
 definitions:
-
-  dCloudSession:
-    type: object
-    required:
-      - sessionId
-    properties:
-      sessionId:
-        type: string
-        example: UUID
-      serverStatus:
-        type: list
-        example: [{...}, {...}]
-      assignedCloudAccount:
-        $ref: '#/definitions/CloudAccount'
 
   CloudAccount:
     type: object
     required:
       - login
+      - password
+      - status
     properties:
       login:
         type: string
         example: ctrlab+1@cisco.com
-      services:
-        type: array
-        items:
-          type: object
-          required:
-            - serviceName
-            - orgId
-          properties:
-            serviceName:
-              type: string
-              example: AMP
-            orgId:
-              type: string
-              example: UUID
+      password:
+        type: string
+        example: secret_password
+      status:
+        type: string
+        enum: [available, assigned, cleaning, cleanup-failed]
+        example: assigned
+
+  dCloudSession:
+    type: object
+    required:
+      - sessionId
+      - lastCheckIn
+    properties:
+      sessionId:
+        type: string
+        example: 549926
+      lastCheckIn:
+        type: string
+        format: date-time
+        example: Thu, 20 Sep 2018 07:13:16 GMT
+      cloudAccount:
+        $ref: '#/definitions/CloudAccount'
