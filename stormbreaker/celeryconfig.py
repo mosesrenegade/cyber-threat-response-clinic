@@ -27,13 +27,18 @@ broker_url = urljoin(REDIS_URL, REDIS_CELERY_BROKER_DATABASE)
 result_backend = urljoin(REDIS_URL, REDIS_CELERY_RESULTS_DATABASE)
 result_expires = 86400
 
-imports = ('stormbreaker.tasks',)
+# imports = ('stormbreaker.tasks',)
 
 
 # Scheduled Tasks
 beat_schedule = {
-    'scheduler_heartbeat': {
-        'task': 'stormbreaker.tasks.scheduler_heartbeat',
-        'schedule': 10.0,
+    # 'scheduler_heartbeat': {
+    #     'task': 'stormbreaker.tasks.scheduler_heartbeat',
+    #     'schedule': 10.0,
+    # },
+    'check_for_expired_dcloud_sessions': {
+        'task': 'stormbreaker.tasks.dcloud.tasks'
+                '.check_for_expired_dcloud_sessions',
+        'schedule': 60.0,
     },
 }

@@ -42,6 +42,8 @@ services:
       REDIS_URL: "redis://redis:6379"
       REDIS_CELERY_BROKER_DATABASE: "1"
       REDIS_CELERY_RESULTS_DATABASE: "2"
+      DCLOUD_SESSION_EXPIRATION_TIME: "3"
+      SELENIUM_COMMAND_EXECUTOR_URL: "http://selenium:4444/wd/hub"
     command: ["celery", "-A", "stormbreaker.celery:app", "worker", "-l", "info"]
 #    restart: always
 
