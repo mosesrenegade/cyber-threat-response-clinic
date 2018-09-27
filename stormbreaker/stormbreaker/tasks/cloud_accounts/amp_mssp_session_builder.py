@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
+import unittest, time, re, pyotp
+
+class AppDynamicsJob(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        self.driver.implicitly_wait(30)
+        self.base_url = "https://www.katalon.com/"
+        self.verificationErrors = []
+        self.accept_next_alert = True
+    
+    def test_app_dynamics_job(self):
+        driver = self.driver
+        driver.get("https://console.amp.cisco.com")
+        driver.find_element_by_id("user_email").clear()
+        driver.find_element_by_id("user_email").send_keys("pword")
+        driver.find_element_by_id("user_password").click()
+        driver.find_element_by_id("user_password").clear()
+        driver.find_element_by_id("user_password").send_keys(" pword")
+        driver.find_element_by_name("button").click()
+		
+	# driver.find_element_by_id("whatthefisthis name").click()
+        # driver.find_element_by_id("whatthefisthis name").clear()
+		# call 2FA here #
+		totp = pyotp.TOTP(os.environ.get('TOTP2FA')) //2FA secret
+		totpnow = totp.now()
+		# print("Current OTP:", totp.now())
+        # driver.find_element_by_id("whatthefisthis name").send_keys(totpnow)
+
+        driver.find_element_by_link_text("New Customer").click()
+        driver.find_element_by_id("business_name").click()
+        driver.find_element_by_id("business_name").click()
+        driver.find_element_by_id("business_name").clear()
+        driver.find_element_by_id("business_name").send_keys("CTRLAB3")
+        driver.find_element_by_id("name_first").click()
+        driver.find_element_by_id("name_first").clear()
+        driver.find_element_by_id("name_first").send_keys("firstname")
+        driver.find_element_by_id("name_last").click()
+        driver.find_element_by_id("name_last").clear()
+        driver.find_element_by_id("name_last").send_keys("lastname")
+        driver.find_element_by_id("email").click()
+        driver.find_element_by_id("email").clear()
+        driver.find_element_by_id("email").send_keys("CTR_pod_no@dcloud.com")
+        driver.find_element_by_id("notification_email").clear()
+        driver.find_element_by_id("notification_email").send_keys("CTR_pod_no@dcloud.com") # appropriate email here
+        driver.find_element_by_id("payment_state").click()
+        Select(driver.find_element_by_id("payment_state")).select_by_visible_text("Evaluation")
+        driver.find_element_by_name("commit").click()
+        driver.find_element_by_id("email").click()
+        driver.find_element_by_id("email").click()
+        driver.find_element_by_id("email").click()
+        driver.find_element_by_id("email").clear()
+        driver.find_element_by_id("email").send_keys("CTR_pod_no@dcloud.com") #index with POD number
+        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Mojave Announcement'])[1]/following::main[1]").click()
+        driver.find_element_by_name("commit").click()
+    
+    def is_element_present(self, how, what):
+        try: self.driver.find_element(by=how, value=what)
+        except NoSuchElementException as e: return False
+        return True
+    
+    def is_alert_present(self):
+        try: self.driver.switch_to_alert()
+        except NoAlertPresentException as e: return False
+        return True
+    
+    def close_alert_and_get_its_text(self):
+        try:
+            alert = self.driver.switch_to_alert()
+            alert_text = alert.text
+            if self.accept_next_alert:
+                alert.accept()
+            else:
+                alert.dismiss()
+            return alert_text
+        finally: self.accept_next_alert = True
+    
+    def tearDown(self):
+        # To know more about the difference between verify and assert,
+        # visit https://www.seleniumhq.org/docs/06_test_design_considerations.jsp#validating-results
+        self.assertEqual([], self.verificationErrors)
+
+if __name__ == "__main__":
+    unittest.main()
