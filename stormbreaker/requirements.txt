@@ -1,5 +1,5 @@
 flask
-celery
+celery[redis]
 redis
 pymongo
 selenium

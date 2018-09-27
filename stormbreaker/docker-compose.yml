@@ -1,43 +1,75 @@
-version: '2'
+version: '3'
 
 services:
 
   flask:
     build:
       context: .
-    restart: always
     depends_on:
       - mongo
+    environment:
+      FLASK_ENV: "development"
+      MONGO_URL: "mongodb://mongo:27017"
+    volumes:
+      - "./:/app/"
+    command: ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]
     ports:
-      - "80:5000"
+      - "5000:5000"
+#    restart: always
+
+  celery-scheduler:
+    build:
+      context: .
+    depends_on:
+      - mongo
+      - redis
     environment:
       MONGO_URL: "mongodb://mongo:27017"
-
-#  celery:
-#    build:
-#      context: .
+      REDIS_URL: "redis://redis:6379"
+      REDIS_CELERY_BROKER_DATABASE: "1"
+      REDIS_CELERY_RESULTS_DATABASE: "2"
+    command: ["celery", "-A", "stormbreaker.celery:app", "beat", "-l", "info"]
 #    restart: always
-#    depends_on:
-#      - mongo
-#      - redis
-#    command: [ "celery_app.py" ]
+
+  celery-worker:
+    build:
+      context: .
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      MONGO_URL: "mongodb://mongo:27017"
+      REDIS_URL: "redis://redis:6379"
+      REDIS_CELERY_BROKER_DATABASE: "1"
+      REDIS_CELERY_RESULTS_DATABASE: "2"
+      DCLOUD_SESSION_EXPIRATION_TIME: "3"
+      SELENIUM_COMMAND_EXECUTOR_URL: "http://selenium:4444/wd/hub"
+    command: ["celery", "-A", "stormbreaker.celery:app", "worker", "-l", "info"]
+#    restart: always
 
   mongo:
     image: mongo:latest
-    restart: always
     ports:
       - "27017:27017"
+#    restart: always
 
   redis:
     image: redis:latest
-    restart: always
     ports:
       - "6379:6379"
+#    restart: always
 
   mongo-express:
     image: mongo-express:latest
-    restart: always
     depends_on:
       - mongo
     ports:
       - "8081:8081"
+#    restart: always
+
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+#    restart: always
