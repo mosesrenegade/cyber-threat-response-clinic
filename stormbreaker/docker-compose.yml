@@ -2,11 +2,21 @@ version: '3'
 
 services:
 
+  nginx:
+    image: nginx:latest
+    container_name: production_nginx
+    volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+    - 80:80
+    - 443:443
+    
   flask:
     build:
       context: .
     depends_on:
       - mongo
+      - nginx
     environment:
       FLASK_ENV: "development"
       MONGO_URL: "mongodb://mongo:27017"
