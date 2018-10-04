@@ -10,7 +10,11 @@ services:
     ports:
     - 80:80
     - 443:443
+    environment:
+      FLASK_HOST: "flask"    
+      FLASK_URL: "http://flask:5000"
     
+
   flask:
     build:
       context: .
