@@ -36,7 +36,7 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = '';
+$password = 'C1sco12345';
 $db = 'INVOICES';
 
 // Create the Connection
