@@ -24,7 +24,7 @@
             <h2>
             Check your bill
             </h2>
-            <form action=/invcheck.php method=GET>
+            <form action=invcheck.php method=GET>
             Provide us with your Invoice Number: <input type="text" name="invoice"><br>
             <br>(Must be an 8 digit number for example 000000001)
             <input type="submit" value="Submit">
