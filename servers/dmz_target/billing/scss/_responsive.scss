@@ -1,0 +1,526 @@
+@media (max-width:1619px){
+	/* Main Menu Area css
+	============================================================================================ */
+   .header_area .navbar .search {
+		margin-left: 40px;
+	}
+	/* End Main Menu Area css
+	============================================================================================ */
+}
+@media (max-width:1300px){
+}
+@media (max-width:1199px){
+	/* Main Menu Area css
+	============================================================================================ */
+	.header_area .navbar .nav .nav-item {
+		margin-right: 28px;
+	}
+	/* End Main Menu Area css
+	============================================================================================ */
+	/* Home Banner Area css
+	============================================================================================ */
+	.home_banner_area .banner_inner {
+		padding: 100px 0px;
+	}
+	/* End Home Banner Area css
+	============================================================================================ */
+	.header_area .navbar .tickets_btn {
+		margin-left: 40px;
+	}
+}
+
+@media (max-width:991px){
+	/* Main Menu Area css
+	============================================================================================ */
+    .navbar-toggler {
+        border: none;
+        border-radius: 0px;
+        padding: 0px;
+        cursor: pointer;
+        margin-top: 27px;
+        margin-bottom: 23px;
+	}
+	.header_area {
+		position: absolute;
+	}
+	.header_area .navbar {
+		// background-image: -moz-linear-gradient( 0deg, rgb(20,29,162) 0%, rgb(155,92,246) 100%);
+		// background-image: -webkit-linear-gradient( 0deg, rgb(20,29,162) 0%, rgb(155,92,246) 100%);
+		// background-image: -ms-linear-gradient( 0deg, rgb(20,29,162) 0%, rgb(155,92,246) 100%);
+		background: rgb(155,92,246);
+	}
+    .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
+		opacity: 1;
+	}
+	.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+		opacity: 0;
+	}
+	.navbar-toggler[aria-expanded="true"] span:first-child {
+		transform: rotate(-45deg);
+		position: relative;
+		top: 7.5px;
+	}
+	.navbar-toggler[aria-expanded="true"] span:last-child {
+		transform: rotate(45deg);
+		bottom: 6px;
+		position: relative;
+	}
+	.navbar-toggler span{
+		display: block;
+		width: 25px;
+		height: 3px;
+		background: #fff;
+		margin: auto;
+		margin-bottom: 4px;
+		transition: all 400ms linear;
+		cursor: pointer;
+	}
+    .navbar .container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .nav{
+        padding: 0px 0px;
+    }
+	.header_area + section, .header_area + row, .header_area + div {
+		margin-top: 117px;
+	}
+    .header_top .nav{
+        padding: 0px;
+    }
+    .header_area .navbar .nav .nav-item .nav-link{
+        line-height: 40px;
+        margin-right: 0px;
+        display: block;
+		border-bottom: 1px solid #ededed33;
+		border-radius: 0px;
+    }
+    .header_area .navbar .search{
+        margin-left: 0px;
+    }
+	.header_area .navbar-collapse{
+		max-height: 340px;
+		overflow-y: scroll;
+	}
+	.header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
+		padding: 0px 15px;
+	}
+	.header_area .navbar .nav .nav-item {
+		margin-right: 0px;
+	}
+	.header_area + section, .header_area + row, .header_area + div {
+		margin-top: 0;
+	}
+	.header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
+		line-height: 40px;
+	}
+	/* End Main Menu Area css
+
+	============================================================================================ */
+	/* Blog page Area css
+	============================================================================================ */
+	.categories_post img{
+        width: 100%;
+    }
+	.categories_post {
+		max-width: 360px;
+		margin: 0 auto;
+	}
+	.blog_categorie_area .col-lg-4{
+        margin-top: 30px;
+    }
+    .blog_area{
+        padding-bottom: 80px;
+    }
+    .single-post-area .blog_right_sidebar{
+        margin-top: 30px;
+    }
+	/* End Blog page Area css
+	============================================================================================ */
+	
+	/* Contact Page Area css
+	============================================================================================ */
+	.contact_info{
+		margin-bottom: 50px;
+	}
+	/* End Contact page Area css
+	============================================================================================ */
+	.home_banner_area .donation_inner{
+		margin-bottom: -30px;
+	}
+	.home_banner_area .dontation_item{
+		max-width: 350px;
+		margin: auto;
+	}
+	/* Footer Area css
+	============================================================================================ */
+	.footer-area .col-sm-6{
+		margin-bottom: 30px;
+	}
+	/* End End Footer Area css
+	============================================================================================ */
+	.header_area .navbar .tickets_btn {
+		margin-left: 0px;
+	}
+	.home_banner_area {
+		min-height: 700px;
+	}
+
+	.section_gap {
+	    padding: 80px 0;
+	}
+	.section_gap_top {
+	    padding-top: 80px;
+	}
+
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+	/* Features Area css
+	============================================================================================ */
+	.single_feature {
+		h4{
+		    font-size: 16px;
+		}
+	}
+
+	/* About Area css
+	============================================================================================ */
+	.about_area{
+		.about_details{
+		    padding: 70px 0px;
+		}
+		.about_right{
+			padding: 10px;
+			.about_inner{
+				padding: 50px 10px 126px;
+			}
+		}
+	}
+
+	/* Home Blog Area css
+	============================================================================================ */
+	.recent_blog{
+		.blog_title{
+			padding-right: 20px;
+		}
+	}
+	.single_blog{
+		.blog_details{
+		    padding-right: 0;
+    		padding-left: 30px;
+		}		
+	}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	/* About Area css
+	============================================================================================ */
+	.about_bg{
+		display: none;
+	}
+	/* Features Area css
+	============================================================================================ */
+	.features_area{
+		.col-lg-4:last-child{
+			.single_feature{
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.single_feature{
+		margin-bottom: 30px;	
+	}
+
+
+	/*Department Area css
+	============================================================================================ */
+	.department_area{
+		.col-lg-2:nth-child(5), .col-lg-2:nth-child(6){
+			.single_department{
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.single_department{
+		margin-bottom: 30px;
+	}
+
+	/* Counter Area css
+	============================================================================================ */
+	.counter_area{
+		.col-lg-3:nth-child(3), .col-lg-3:nth-child(4){
+			.single_counter{
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.single_counter{
+		margin-bottom: 30px;
+	}
+
+	/* Team Area css
+	============================================================================================ */
+
+	.team_area{
+		.col-lg-3:nth-child(3), .col-lg-3:nth-child(4){
+			.single_member{
+				margin-bottom: 0px;
+			}	
+		}
+	}
+	.single_member{
+		margin-bottom: 30px;
+	}
+
+	/* Home Blog Area css
+	============================================================================================ */
+	.recent_blog{
+		.blog_title{
+			text-align: center;
+			margin-bottom: 50px;
+		}
+	}
+}
+
+@media (max-width:767px){
+	.home_banner_area {
+		min-height: 500px;
+	}
+	.home_banner_area .banner_inner {
+		min-height: 500px;
+	}
+	.home_banner_area .banner_inner .banner_content {
+		margin-top: 0px;
+	}
+
+
+
+	.main_title{
+		h2{
+			font-size: 30px;
+		}
+	}
+
+
+	/* About Area css
+	============================================================================================ */
+	.about_bg{
+		display: none;
+	}
+	.about_area{
+		.about-details{
+			h2{
+				font-size: 30px;
+			}
+		}
+	}
+
+	/* Features Area css
+	============================================================================================ */
+	.single_feature {
+		h4{
+		    font-size: 16px;
+		}
+	}
+
+
+	/*Department Area css
+	============================================================================================ */
+	.department_area{
+		.col-lg-2:last-child{
+			.single_department{
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.single_department{
+		margin-bottom: 30px;
+	}
+	
+	/* Counter Area css
+	============================================================================================ */
+	.counter_area{
+		.col-lg-3:last-child{
+			.single_counter{
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.single_counter{
+		margin-bottom: 30px;
+	}
+
+
+	/* Team Area css
+	============================================================================================ */
+
+	.team_area{
+		.col-lg-3:last-child{
+			.single_member{
+				margin-bottom: 0px;
+			}	
+		}
+	}
+	.single_member{
+		margin-bottom: 30px;
+	}
+
+	/* Home Blog Area css
+	============================================================================================ */
+	.recent_blog{
+		.blog_title{
+			text-align: center;
+			margin-bottom: 50px;
+			h2{
+				font-size: 30px;
+			}
+		}
+	}
+	.single_blog{
+		text-align: center;
+		&:last-child{
+			margin-bottom: 80px;
+		}
+	}
+	
+
+
+
+
+	/* Blog Page Area css
+	============================================================================================ */
+    .blog_banner .banner_inner .blog_b_text h2 {
+		font-size: 40px;
+		line-height: 50px;
+	}
+	.blog_info.text-right{
+		text-align: left !important;
+		margin-bottom: 10px;
+	}
+	/* End Blog Page Area css
+	============================================================================================ */
+	.home_banner_area .banner_inner .banner_content h3 {
+		font-size: 30px;
+	}
+	.home_banner_area .banner_inner .banner_content p br {
+		display: none;
+	}
+	.home_banner_area .banner_inner .banner_content h3 span {
+		line-height: 45px;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	/* Footer Area css
+	============================================================================================ */
+	.footer-bottom{
+		text-align: center;
+	}
+	.footer-bottom .footer-social {
+		text-align: center;
+	}
+	/* End End Footer Area css
+	============================================================================================ */
+}
+@media (max-width:600px){
+	
+}
+@media (max-width:575px){
+	.top_menu {
+		display: none;
+	}
+	.header_area + section, .header_area + row, .header_area + div {
+		margin-top: 0px;
+	}
+    /* Home Banner Area css
+	============================================================================================ */
+	.home_banner_area .banner_inner .banner_content h2 {
+		font-size: 28px;
+		line-height: 38px;
+	}
+	.home_banner_area {
+		min-height: 500px;
+	}
+	.home_banner_area .banner_inner {
+		min-height: 500px;
+	}
+	.blog_banner .banner_inner .blog_b_text {
+		margin-top: 0px;
+	}
+	.home_banner_area .banner_inner .banner_content img{
+		display: none;
+	}
+	.home_banner_area .banner_inner .banner_content h5 {
+		margin-top: 0px;
+	}
+	/* End Home Banner Area css
+	============================================================================================ */
+	/* Elements Area css
+	============================================================================================ */
+	.sample-text-area {
+		padding: 70px 0 70px 0;
+	}
+	.generic-blockquote {
+		padding: 30px 15px 30px 30px;
+	}
+	/* End Elements Area css
+	============================================================================================ */
+	
+	/* Blog Page Area css
+	============================================================================================ */
+	.blog_details h2 {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.blog_banner .banner_inner .blog_b_text h2 {
+		font-size: 28px;
+		line-height: 38px;
+	}
+	/* End Blog Page Area css
+	============================================================================================ */
+	/* Footer Area css
+	============================================================================================ */
+
+	/* End End Footer Area css
+	============================================================================================ */
+	.single-footer-widget .sub-btn {
+		right: 0px;
+	}
+	
+}
+
+@media (max-width:480px){
+	/* Main Menu Area css
+	============================================================================================ */
+	.header_area .navbar-collapse{
+		max-height: 250px;
+	}
+	/* End Main Menu Area css
+	============================================================================================ */
+	
+	/* Home Banner Area css
+	============================================================================================ */
+    .home_banner_area .banner_inner .banner_content {
+		padding: 30px 15px;
+		margin-top: 0px;
+	}
+	.home_banner_area .banner_inner .banner_content h3 {
+		font-size: 24px;
+	}
+	/* End Home Banner Area css
+	============================================================================================ */
+	.banner_area .banner_inner .banner_content h2 {
+		font-size: 32px;
+	}
+	/* Blog Page Area css
+	============================================================================================ */
+	.comments-area .thumb {
+		margin-right: 10px;
+	}
+	
+	/* End Blog Page Area css
+	============================================================================================ */
+	
+}

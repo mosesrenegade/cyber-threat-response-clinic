@@ -1,0 +1,333 @@
+/* Start Features Area css
+============================================================================================ */
+
+.features_area {}
+
+.single_feature {
+    position: relative;
+    padding: 30px;
+    @include transition();
+    .feature_head {
+        margin-bottom: 30px;
+        img {
+            position: absolute;
+        }
+        h4 {
+            padding: 11px 0px 0px 60px;
+        }
+    }
+    .feature_btn {
+        .f_btn {
+            font-weight: 500;
+            color: $title-color;
+            @include transition ();
+            &:hover {
+                @extend .gradient-color;
+            }
+        }
+    }
+    &:hover {
+        box-shadow: 0 0 50px rgba(153, 153, 153, 0.2);
+    }
+}
+
+/* End Features Area css
+============================================================================================ */
+
+/* Start About Area css
+============================================================================================ */
+
+.about_area {
+    z-index: 1;
+    position: relative;
+    .about_details {
+        padding: 50px 0px 50px;
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+    }
+    .list_wrap {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        .about_lists {
+            position: relative;
+            padding-left: 20px;
+            &:before {
+                font-family: fontawesome;
+                content: "\f101";
+                position: absolute;
+                left: 0;
+                color: #772dff;
+            }
+        }
+    }
+    .about_bg {
+        background: url(../img/about-bg.jpg);
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 55%;
+        z-index: -1;
+        &.overlay:after {
+            opacity: .3;
+            background: #000000;
+        }
+    }
+}
+
+.about_right {
+    background: url(../img/about-bg2.png);
+    background-size: cover;
+    z-index: 1;
+    padding: 20px;
+    .about_inner {
+        border: 1px solid #eeeeee;
+        padding: 90px 20px 125px;
+        color: #fff;
+        h4 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+    }
+    &.overlay:after {
+        opacity: .5;
+        background: #7d46e2;
+    }
+}
+
+/* End About Area css
+============================================================================================ */
+
+/* Start Department Area css
+============================================================================================ */
+
+.department_area {
+    .primary-btn {
+        margin: 70px auto 0px;
+    }
+}
+
+.single_department {
+    padding: 30px 0;
+    box-shadow: 0 0 50px rgba(153, 153, 153, 0.1);
+    @include transition();
+    .dpmt-thumb {
+        min-height: 80px;
+    }
+    h4 {
+        margin-top: 30px;
+    }
+    &:hover {
+        box-shadow: 0 0 50px rgba(153, 153, 153, 0.3);
+    }
+}
+
+/* End Department Area css
+============================================================================================ */
+
+/* Start Counter Area css
+============================================================================================ */
+
+.counter_area {
+    background-image: url(../img/counter-bg.jpg);
+    background-size: cover;
+    z-index: 1;
+    &.overlay:after {
+        background: #000000;
+        opacity: .3;
+    }
+}
+
+.single_counter {
+    background: rgba(#fff, .2);
+    box-shadow: 0 0 50px rgba(153, 153, 153, 0.1);
+    text-align: center;
+    padding: 50px 20px;
+    @media (max-width: 575px) {
+        padding: 20px;
+    }
+    h1 {
+        font-family: $primary-font;
+        font-size: 72px;
+        color: #ffffff;
+        margin-bottom: 50px;
+        @media (max-width: 575px) {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+    }
+    p {
+        font-size: 16px;
+        color: #fff;
+    }
+}
+
+/* End Countere Area css
+============================================================================================ */
+
+/* Start Team Area css
+============================================================================================ */
+
+.team_area {}
+
+.single_member {
+    text-align: center;
+    box-shadow: none;
+    .author_decs {
+        box-shadow: 0 0 50px rgba(153, 153, 153, 0.1);
+        @include transition();
+        background: #fff;
+        padding: 40px;
+        margin-top: -30px;
+        .social_icons {
+            margin-top: 20px;
+            a {
+                color: #cccccc;
+                padding-right: 10px;
+                @include transition();
+                &:hover {
+                    color: #772dff;
+                }
+            }
+        }
+        h4 {
+            margin: 20px 0px 0px;
+        }
+        .profession {
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 0px;
+        }
+    }
+    &:hover {
+        .author_decs {
+            box-shadow: 0 0 50px rgba(153, 153, 153, 0.3);
+        }
+    }
+}
+
+/* End Team Area css
+============================================================================================ */
+
+/* Start Blog Area css
+============================================================================================ */
+
+.blog_area {}
+
+.recent_blog {
+    &.appoinment {
+        @media (max-width: 991px) {
+            margin-top: 60px;
+        }
+    }
+    .blog_title {
+        margin-bottom: 80px;
+        h2 {
+            font-size: 36px;
+        }
+        p {
+            @media (max-width: 991px) {
+                max-width: 455px;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.single_blog {
+    margin-bottom: 20px;
+    @include transition();
+    .blog_thumb {}
+    .blog_details {
+        padding-right: 20px;
+        .blog_meta {
+            span {
+                padding-right: 15px;
+                i.fa {
+                    padding-right: 10px;
+                }
+            }
+        }
+        h4 {
+            a {
+                color: $title-color;
+            }
+            margin: 25px 0px 15px;
+        }
+    }
+    &:hover {
+        h4 {
+            a {
+                color: #803bff;
+            }
+        }
+    }
+}
+
+.appoinment_form_section {
+    padding: 50px;
+    @media (max-width: 575px) {
+        padding: 50px 20px;
+    }
+    .common_input {
+        border: 1px solid #eeeeee;
+        height: 46px;
+        line-height: 46px;
+        margin-bottom: 10px;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    input,
+    textarea {
+        @include placeholder {
+            font-size: 13px;
+            color: #999999;
+        }
+    }
+    .common_textarea {
+        height: 120px;
+        resize: none;
+        padding: 10px 12px;
+        border: 1px solid #eeeeee;
+        margin-bottom: 10px;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .nice-select {
+        height: 46px;
+        line-height: 42px;
+        width: 100%;
+        margin-bottom: 10px;
+        padding-top: 4px;
+        padding: 0 12px;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            border: 1px solid #eeeeee;
+        }
+        .list {
+            width: 100%;
+        }
+        .current {
+            font-size: 13px;
+            color: #999999;
+        }
+    }
+    .primary-btn {
+        border: transparent;
+        margin-top: 10px;
+    }
+}
+
+/* End Blog Area css
+============================================================================================ */

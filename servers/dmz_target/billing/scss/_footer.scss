@@ -1,0 +1,130 @@
+/*============== footer-area css ===============*/
+
+.footer-area {
+    background-color: #000000;
+    h4 {
+        padding-bottom: 10px;
+    }
+    .number {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 600;
+		line-height: 30px;
+		margin: 0;
+    }
+    .genric-btn {
+		@extend .gradient-bg;
+		color: #ffffff;
+        border: none;
+        border-radius: 57px;
+		height: 34px;
+		line-height: 34px;
+		margin: 2px;
+    }
+    .primary-btn {
+        background-color: $primary-color;
+    }
+    .primary-btn:hover {
+        .lnr {
+            color: $primary-color;
+        }
+    }
+    .single-footer-widget {
+        @media(max-width: 768px) {
+            .newsletter .primary-btn {
+                right: 2% !important;
+                width: auto;
+                right: 0;
+                top: 5px;
+                transform: translate(0%, 0);
+            }
+        }
+    }
+}
+
+.single-footer-widget {
+    .navbar-form {
+        width: 100%;
+        .form-control {
+            border: none;
+            border-radius: 20px;
+			font-size: 13px;
+			background: transparent;
+			color: #ffffff;
+			padding: 0 20px;
+			&:focus {
+				box-shadow: none;
+			}
+		}
+		input {
+			@include placeholder {
+				font-size: 14px;
+				color: #999999;
+			}
+		}
+        .add-on {
+			border-radius: 20px;
+			border: 1px solid #555555;
+        }
+        .genric-btn {
+            &:hover {
+                background-color: $primary-color;
+                .lnr {
+                    color: #ffffff;
+                }
+            }
+        }
+        .lnr {
+            font-weight: 900;
+            font-size: 18px !important;
+            color: #ffffff;
+        }
+    }
+}
+
+.footer_top {
+    background: url(../img/footer-bg.jpg) no-repeat scroll center center;
+    background-size: cover;
+}
+
+.footer-bottom {
+	background: #222222;
+	padding: 13px 0;
+    a {
+        color: $primary-color;
+    }
+    .footer-social {
+        text-align: right;
+        a {
+			background: #2b2b2b;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+            margin-left: 4px;
+            padding: 0px 9px;
+			@include transition();
+			color: #ffffff;
+            &:hover {
+                @extend .gradient-bg;
+			}
+			@media (max-width: 461px) {
+				margin-left: 0;
+				margin-right: 4px;
+			}
+        }
+        i {
+            color: #cccccc;
+            @include transition();
+        }
+        @media (max-width: 991px) {
+            text-align: left;
+        }
+    }
+}
+.footer-text {
+    margin-bottom: 0;
+    @media (max-width: 420px) {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+}

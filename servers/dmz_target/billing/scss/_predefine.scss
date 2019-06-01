@@ -1,0 +1,113 @@
+.section_gap {
+    padding: 120px 0;
+    @media (max-width: 767px) {
+        padding: 60px 0;
+    }
+}
+
+.section_gap_top {
+    padding-top: 120px;
+    @media (max-width: 767px) {
+        padding-top: 60px;
+    }
+}
+
+.section_gap_bottom {
+    padding-bottom: 120px;
+    @media (max-width: 767px) {
+        padding-bottom: 60px;
+    }
+}
+.lite_bg{
+    background: #f9f9f9;
+}
+
+/* Main Title Area css
+============================================================================================ */
+
+.main_title {
+    text-align: center;
+    margin-bottom: 75px;
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 14px;
+        margin-bottom: 0px;
+        font-weight: 300;
+        max-width: 450px;
+        margin: auto;
+    }
+}
+
+/* End Main Title Area css
+============================================================================================ */
+
+/* Start Gradient Area css
+============================================================================================ */
+
+.gradient-bg {
+    @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+}
+
+.gradient-bg2 {
+    @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+}
+
+.gradient-color {
+	@include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* End Gradient Area css
+============================================================================================ */
+
+/* Start Buttons Area css
+============================================================================================ */
+
+.primary-btn {
+	display: inline-block;
+	@include gradient2(to right, $primary-color 0%, $primary-color2 51%, $primary-color 100%);
+    background-size: 200% auto;
+    padding: 0px 38px;
+    color: #fff;
+    font-family: $primary-font;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 50px;
+    border-radius: 50px;
+    outline: none !important;
+    box-shadow: 0px 0px 15px rgba(108, 39, 255, 0.3);
+    text-align: center;
+    cursor: pointer;
+    @include transition;
+    &:hover {
+        background-position: right center;
+        color: #fff;
+    }
+}
+
+/* End Buttons Area css
+============================================================================================ */
+
+
+/* Start Overlay css
+============================================================================================ */
+.overlay{
+    position: relative;
+}
+.overlay:after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    z-index: -1;
+}
+
+/* End Overlay css
+============================================================================================ */
