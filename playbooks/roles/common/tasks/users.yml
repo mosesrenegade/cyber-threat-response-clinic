@@ -1,8 +1,8 @@
 ---
 - name: "Lets go ahead and add the root user and keys"
-  username: root
-  keys:
-    - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGClk35HTUN9yOQhcUgv1I2fdiTLXekNo+PM/r3yZLmWcZN/NnMk+JrWd06dGoI9nyH5X1JsCeQnMcoVHooI4Pc= root@oob"
-  shell: "/bin/bash"
-  state: present
+  user: root
+    keys:
+      - "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGClk35HTUN9yOQhcUgv1I2fdiTLXekNo+PM/r3yZLmWcZN/NnMk+JrWd06dGoI9nyH5X1JsCeQnMcoVHooI4Pc= root@oob"
+    shell: "/bin/bash"
+    state: present
   
