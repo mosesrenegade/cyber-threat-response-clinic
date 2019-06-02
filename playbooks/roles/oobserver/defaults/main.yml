@@ -1,0 +1,3 @@
+---
+oob_apt_packages:
+  - nginx

@@ -1,0 +1,5 @@
+---
+- name: Install NGINX
+  apt:
+    name: '{{ oob_apt_packages }}'
+    state: latest

@@ -1,2 +1,5 @@
 [linux_servers]
 localhost ansible_connection=local
+
+[oobserver]
+localhost ansible_connection=local

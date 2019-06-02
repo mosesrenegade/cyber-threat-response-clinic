@@ -6,3 +6,11 @@
 
   roles:
   - common
+
+- name: Let's get oobserver in order
+  hosts: oobserver
+  remote_user: root
+  become: yes
+
+  roles:
+  - oobserver
