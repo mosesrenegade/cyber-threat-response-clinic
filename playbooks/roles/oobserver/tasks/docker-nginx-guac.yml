@@ -17,7 +17,12 @@
   copy:
     src: docker-compose.yml
     dest: "/root/docker-compose.yml"
-  
+
+- name: Let's get the Docerfile over to the right Directory"
+  copy: 
+    src: guacamole-dockerfile
+    dest: /root/guacamole/Dockerfile
+
 - name: Lets get this guacamole thing going
   docker_compose:
     project_src: /root 
