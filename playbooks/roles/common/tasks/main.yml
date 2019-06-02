@@ -12,5 +12,4 @@
     name: '{{ apt_packages }}'
     state: latest
 
-
 - include: users.yml
