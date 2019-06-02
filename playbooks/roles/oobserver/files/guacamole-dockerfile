@@ -1,2 +1,2 @@
 FROM tomcat:latest
-COPY /root/cyber-threat-response-clinic/servers/oob/guacamole/guacamole.war /usr/local/tomcat/webapps/guacamole.war
+COPY /root/cyber-threat-response-clinic/servers/oob/guacamole/guacamole-1.0.0.war /usr/local/tomcat/webapps/guacamole.war

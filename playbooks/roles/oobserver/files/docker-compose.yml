@@ -2,14 +2,14 @@ version: '3.3'
 
 services:
 
-  guacamole:
-    container_name: guacamole
-    build: ./guacamole
-    restart: always
-    ports:
-    - "127.0.0.1:8080:8080"
-    volumes:
-    - /etc/guacamole:/etc/guacamole
+# guacamole:
+#   container_name: guacamole
+#   build: ./guacamole
+#   restart: always
+#   ports:
+#   - "127.0.0.1:8080:8080"
+#   volumes:
+# - /etc/guacamole:/etc/guacamole
     
   guacd:
     container_name: guacd
