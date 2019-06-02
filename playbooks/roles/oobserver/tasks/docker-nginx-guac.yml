@@ -27,4 +27,3 @@
 - name: What does docker look like
   debug:
     var: output
-

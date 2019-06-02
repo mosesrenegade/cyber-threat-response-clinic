@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  guacd:
+    container_name: guacd
+    image: guacamole/guacd:latest
+    restart: always
+
+  nagios:
+    container_name: nagios
+    image: jasonrivers/nagios:latest
+    restart: always
+    ports:
+    - "127.0.0.1:8888:80"
+    volumes:
+    - /root/cyber-threat-response-clinic/servers/oob/nagios/nagiosetc:/opt/nagios/etc
+    - /root/cyber-threat-response-clinic/servers/oob/nagios/nagiosetc:/opt/nagios/var
+    - /root/cyber-threat-response-clinic/servers/oob/nagios/nagiosetc:/opt/nagios/Custom-Nagios-Plugins
+    - /root/cyber-threat-response-clinic/servers/oob/nagios/nagiosetc:/opt/nagiosgraph/var
+    - /root/cyber-threat-response-clinic/servers/oob/nagios/nagiosetc:/opt/nagiosgraph/etc
+    - /root/cyber-threat-response-clinic/servers/oob/nagios/nagiosetc:/etc/apache2/sites-enabled
+
+volumes:
+  nagiosetc:
+  nagiosvar:
+  customplugins:
+  nagiosgraphvar:
+  nagiosgraphetc:
