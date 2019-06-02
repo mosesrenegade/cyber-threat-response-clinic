@@ -1,11 +1,25 @@
 version: '3.3'
 
 services:
+  services:
+
+  guacamole:
+    container_name: guacamole
+    image: tomcat:latest
+    restart: always
+    ports:
+    - "127.0.0.1:8080:8080"
+    volumes:
+    - /root/cyber-threat-response-clinic/servers/oob/guacamole/guacamole.war:/usr/local/tomcat/webapps
+    - /root/cyber-threat-response-clinic/servers/oob/guacamole/etc:/etc/guacamole
+    
   guacd:
     container_name: guacd
     image: guacamole/guacd:latest
     restart: always
-
+    ports:
+    - "127.0.0.1:4822:4822"
+    
   nagios:
     container_name: nagios
     image: jasonrivers/nagios:latest
