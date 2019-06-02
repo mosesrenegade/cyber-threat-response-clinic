@@ -1,0 +1,7 @@
+---
+apt_packages:
+- apt-transport-https
+- ca-certificates
+- gnupg-agent
+- software-properties-common
+- python-pip

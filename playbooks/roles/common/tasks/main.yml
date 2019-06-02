@@ -1,0 +1,14 @@
+---
+
+- name: We Need Python
+  raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+- name: Update apt cache
+  apt: update_cache=yes
+  changed_when: False
+
+- name: install prerequisites
+  apt:
+    name: '{{ apt_packages }}'
+    state: latest
+      

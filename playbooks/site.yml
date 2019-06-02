@@ -1,0 +1,7 @@
+---
+- name: apply a common playbook to linux servers in the CDC lab
+  hosts: linux_servers
+  remote_user: root
+
+  roles:
+  - common
