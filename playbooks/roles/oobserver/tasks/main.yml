@@ -3,3 +3,11 @@
   apt:
     name: '{{ oob_apt_packages }}'
     state: latest
+
+- name: Change the Default configuration
+  template:
+    src: "default.j2"
+    dest: /etc/nginx/sites-enabled/default
+    mode: 0644
+    owner: root
+    group: root
