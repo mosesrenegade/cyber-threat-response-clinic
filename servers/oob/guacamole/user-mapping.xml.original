@@ -1,0 +1,50 @@
+<user-mapping>
+  <authorize username="dcloud" password="CTRLab123!">
+    <connection name="Jumphost">
+      <protocol>rdp</protocol>
+      <param name="hostname">192.168.1.50</param>
+      <param name="port">3389</param>
+      <param name="username">hackmds\Administrator</param>
+      <param name="password">CTRLab123!</param>
+      <param name="width">1280</param>
+      <param name="height">800</param>
+    </connection>
+    <connection name="Contractor">
+      <protocol>rdp</protocol>
+      <param name="hostname">192.168.1.9</param>
+      <param name="port">3389</param>
+      <param name="username">contractorlaptop\dhowser</param>
+      <param name="password">CTRLab123!</param>
+      <param name="ignore-cert">true</param>
+     </connection>
+    <connection name="Workstation on Wheels">
+      <protocol>rdp</protocol>
+      <param name="hostname">192.168.40.5</param>
+      <param name="port">3389</param>
+      <param name="username">hackmds\wow-generic</param>
+      <param name="password">CTRLab123!</param>
+    </connection>
+    <connection name="Doctor Workstation">
+      <protocol>rdp</protocol>
+      <param name="hostname">192.168.40.10</param>
+      <param name="port">3389</param>
+      <param name="username">hackmds\dhowser</param>
+      <param name="password">CTRLab123!</param>
+    </connection>
+    <connection name="ASAv">
+      <protocol>ssh</protocol>
+      <param name="hostname">192.168.1.1</param>
+      <param name="port">22</param>
+      <param name="username">admin</param>
+      <param name="password">CTRLab123!</param>
+      <param name="color-scheme">green-black</param>
+      <param name="font-size">14</param>
+    </connection>
+    <connection name="Kali Linux">
+      <protocol>vnc</protocol>
+      <param name="hostname">192.168.1.5</param>
+      <param name="password">CTRLab123!</param>
+      <param name="port">5901</param>
+    </connection>
+  </authorize>
+</user-mapping>

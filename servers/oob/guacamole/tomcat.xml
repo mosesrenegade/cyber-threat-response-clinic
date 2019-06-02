@@ -1,0 +1,3 @@
+<Context path="/guacamole" docBase="/usr/share/guacamole/guacamole">
+ <Resources allowLinking="true" />
+</Context>
