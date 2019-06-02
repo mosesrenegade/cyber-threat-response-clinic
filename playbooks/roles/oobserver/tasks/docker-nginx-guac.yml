@@ -11,4 +11,20 @@
 
 - name: Lets get the docker py
   pip:
-    name: "{{ oob_pip_packages }}"   
+    name: "{{ oob_pip_packages }}"
+
+- name: Let's move docker-compose.yml to the root directory
+  copy:
+    src: docker-compose.yml
+    dest: "/root/docker-compose.yml"
+  
+- name: Lets get this guacamole thing going
+  docker_compose:
+    project_src: /root 
+    state: present
+  register: output
+
+- name: What does docker look like
+  debug:
+    var: output
+
