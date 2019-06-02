@@ -1,8 +1,8 @@
 ---
 - name: "Lets go ahead and add the root user and keys"
   user: root
-    shell: "/bin/bash"
-    state: present
+  shell: "/bin/bash"
+  state: present
 
 - name: "Add the Authorized Key File"
   authorized_key:
