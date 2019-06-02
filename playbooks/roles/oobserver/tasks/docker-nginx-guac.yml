@@ -1,0 +1,14 @@
+---
+- name: add apt key for Docker
+  apt_key: url='https://download.docker.com/linux/ubuntu/gpg' state=present
+
+- name: add apt repo for Docker
+  apt_repository: repo='deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable' state=present
+
+- name: Update again for Docker
+  apt: update_cache=yes
+  changed_when: False
+
+- name: Lets get the docker py
+  pip:
+    name: "{{ oob_pip_packages }}"   

@@ -12,3 +12,5 @@
     owner: root
     group: root
   notify: reload nginx
+
+- include: docker-nginx-guac.yml

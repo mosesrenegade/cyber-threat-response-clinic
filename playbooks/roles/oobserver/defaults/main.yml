@@ -1,3 +1,7 @@
 ---
 oob_apt_packages:
   - nginx
+
+oob_pip_packages:
+  - docker
+  - docker-compose

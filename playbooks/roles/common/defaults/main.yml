@@ -4,4 +4,4 @@ apt_packages:
 - ca-certificates
 - gnupg-agent
 - software-properties-common
-- python-pip
+- python-pipx
