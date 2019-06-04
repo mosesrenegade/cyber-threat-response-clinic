@@ -1,0 +1,22 @@
+---
+- name: Start Service for Windows Update
+  win_service:
+    name: wuauserv
+    start_mode: auto
+    state: started
+
+- name: Install Hotfix KB3033929
+  win_get_url:
+    url: https://download.microsoft.com/download/C/8/7/C87AE67E-A228-48FB-8F02-B2A9A1238099/Windows6.1-KB3033929-x64.msu
+    dest: C:\temp\Windows6.1-KB3033929-x64.msu
+
+- name: Install hotfix
+  win_hotfix:
+    hotfix_kb: KB3033929
+    source: C:\temp\Windows6.1-KB3033929-x64.msu
+    state: present
+  register: hotfix_result
+
+- name: Reboot host if required
+  win_reboot:
+  when: hotfix_result.reboot_required

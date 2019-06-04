@@ -3,3 +3,12 @@ localhost ansible_connection=local
 
 [oobserver]
 localhost ansible_connection=local
+
+[win]
+198.19.30.100
+
+[win:vars]
+ansible_user=administrator
+ansible_password=C1sco12345
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore

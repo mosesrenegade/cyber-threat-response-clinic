@@ -1,4 +1,4 @@
 @ECHO OFF
 sc.exe config wuauserv start= demand
 net start wuauserv
-.\Windows6.1-KB2506143-x64.msu
+.\Win7AndW2K8R2-KB3191566-x64.msu
