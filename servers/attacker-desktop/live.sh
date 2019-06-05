@@ -20,6 +20,12 @@ cd /tmp
 unzip BloodHound-linux-x64.zip
 
 #
+# let's start neo4j
+#
+
+screen -d -m neo4j console
+
+#
 # Running Bloodhound
 #
 cd BloodHound-linux-x64
