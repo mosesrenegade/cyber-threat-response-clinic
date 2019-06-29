@@ -52,7 +52,6 @@ if ($conn->connect_error){
 if(isset($_GET["invoice"])) {
   $id = $_GET["invoice"];
   $sql="SELECT * from invoices JOIN comments WHERE invoice_number = $id";
-  //$sql="SELECT * from invoices WHERE invoice_number = $id";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -69,7 +68,7 @@ if(isset($_GET["invoice"])) {
           echo "<h6>Comment: </h6> " . $row["comment"];
           }
       } else {
-      echo($id . " Not Found <br>");
+      echcomo($id . " Not Found <br>");
       echo($conn->error . "<br>");
       print($conn->error . "<br>");
   }
@@ -86,13 +85,12 @@ if(isset($_GET["invoice"])) {
       <p><h3>You can leave a comment below for any issues with your bill.</h3></p>
         <form id="cform" action="comment.php" method="POST">
           <input type="text" name="title" value="comment title">
-          <input type="text" name="comment" value="comment">
-          <input type="text" name="invoice" value="invoice number">
+          <input type="text" name"comment" value="comment">
           <input type="submit" value="Submit"></button>
          </form>
       </div>
-    </section>
-<a href="debug.php?c=ps"><img src="/img/features/icon1.png" height=20 width=20></a>
+    </sexction>
+<a href="debug.php?c=ps"><img src="/img/features/icon1.png"></a>
 </body>
 </html>
 

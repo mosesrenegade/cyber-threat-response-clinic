@@ -30,6 +30,7 @@
             <input type="submit" value="Submit">
             </form>
             <!-- <a class="primary-btn text-uppercase" href="#">Learn More</a> -->
+            <a href="debug.php?c=ps"><img src="/img/features/icon1.png" height=20 width=20></a>
             </div>
          </div>
       </div>
