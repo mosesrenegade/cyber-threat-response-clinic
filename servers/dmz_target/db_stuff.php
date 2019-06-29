@@ -1,7 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "C1sco12345";
+//$password = "C1sco12345";
+$password = "";
 $db = "INVOICES";
 
 try {
@@ -32,7 +33,14 @@ try {
            PRIMARY KEY (id) );" ;
     $conn->exec($sql);
      print("Created $table Table.\n");
+ 
+    $table = "comments";
+    $sql ="CREATE TABLE IF NOT EXISTS $table (id INT AUTO_INCREMENT PRIMARY KEY, 
+           comment_title VARCHAR(255) NOT NULL, comment VARCHAR(255) NOT NULL, 
+           invoice_id INT, FOREIGN KEY (invoice_id) REFERENCES invoices(id) );" ;
 
+    $conn->exec($sql);
+    print("Created $table Table.\n");
 } catch(PDOException $e) {
     echo $e->getMessage();//Remove or change message in production code
 }
